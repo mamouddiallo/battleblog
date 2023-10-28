@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>battle_project</title>
+    <link rel="stylesheet" href="../static/css/connecter.css">
+    <script src="../static/js/connecter.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">MyBLOG</a>
+			
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+				<li class="nav-item">
+					{% if 'username' in session%}
+					<h6 class="title">
+						<h3>Welcome, {{ session['username'] }} </h3>
+					  </h6>
+					  {% endif %}
+                </li>
+				<li class="nav-item">
+                    <a href="/poster" class="nav-link">TO post</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/index" class="nav-link">logout</a>
+                </li>
+
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section class="infos">
+        <p></p>
+
+    </section>
+    <section class="services">
+
+    </section>
+
+	<section>
+		<div class="container">
+			<div>
+				<div class="col-md-12 text-center"><h1>MY POST</h1></div>
+			</div>
+			<div>
+				<table class="table">
+					<thead style="background-color: brown; color:aliceblue">
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+
+					</thead>
+					<tbody>
+					{% for student in students %}
+						<tr>
+							<td>{{student.id}}</td>
+							<td>{{student.firstname}}</td>
+							<td>{{student.lastname}}</td>
+							<td>{{student.email}}</td>
+							<td>
+								<span style="font-size:24px; color: green;">
+								<a href="/edit/{{student.id}}"> <i class="fas fa-edit"></i>Edit</a>
+		
+								<span style="font-size:24px; color:red;">
+								<a href="/delete/{{student.id}}"> <i class="fas fa-trash-alt"></i>Delete</a>
+		
+								</span>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+	</section>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="heading">
+          <h2>MyBLOG<sup>™</sup></h2>
+        </div>
+        <div class="content">
+          <div class="services">
+            <h4>Services</h4>
+            <p><a href="#">to post</a></p>
+            <p><a href="#">to sell</a></p>
+            <p><a href="#">to buy</a></p>
+            <p><a href="#">to meet</a></p>
+          </div>
+          <div class="social-media">
+            <h4>Social</h4>
+            <p>
+              <a href="#"
+                ><i class="fab fa-linkedin"></i> Linkedin</a
+              >
+            </p>
+            <p>
+              <a href="#"
+                ><i class="fab fa-twitter"></i> Twitter</a
+              >
+            </p>
+            <p>
+              <a href="#"
+                ><i class="fab fa-github"></i> Github</a
+              >
+            </p>
+            <p>
+              <a href="#"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </p>
+            <p>
+              <a href="#"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </p>
+          </div>
+          <div class="links">
+            <h4>Quick links</h4>
+            <p><a href="#">Services</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">About</a></p>
+            <p><a href="#">Contact</a></p>
+          </div>
+          <div class="details">
+            <h4 class="address">Address</h4>
+            <p>
+                We are located in the commune of cocody,  <br />
+                Angre crossroads gestoci
+            </p>
+            <h4 class="mobile">Mobile</h4>
+            <p><a href="#">+225 0758504822</a></p>
+            <h4 class="mail">Email</h4>
+            <p><a href="#">Mamoud@gmail.com</a></p>
+          </div>
+        </div>
+        <footer>
+          <hr />
+          © 2023 MyBLOG .
+        </footer>
+      </div>
+</body>
+</html>
