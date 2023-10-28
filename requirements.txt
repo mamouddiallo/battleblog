@@ -3,7 +3,8 @@ colorama
 Flask 
 Flask-Login
 Flask-SQLAlchemy 
-greenlet gunicorn 
+greenlet 
+gunicorn 
 itsdangerous Jinja2 
 MarkupSafe packaging 
 SQLAlchemy typing_extensions 
