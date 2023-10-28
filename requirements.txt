@@ -1,0 +1,8 @@
+blinker click 
+colorama Flask 
+Flask-Login Flask-SQLAlchemy 
+greenlet gunicorn 
+itsdangerous Jinja2 
+MarkupSafe packaging 
+SQLAlchemy typing_extensions 
+Werkzeug
