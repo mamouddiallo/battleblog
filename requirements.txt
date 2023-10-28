@@ -1,4 +1,4 @@
-blinker click 
+blinker 
 colorama Flask 
 Flask-Login Flask-SQLAlchemy 
 greenlet gunicorn 
